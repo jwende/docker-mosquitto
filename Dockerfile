@@ -1,6 +1,8 @@
-FROM debian:jessie
+FROM ubuntu:latest
 
-MAINTAINER Thomas Kerpe <toke@toke.de>
+MAINTAINER Joerg Wende <jwende@gmx.de>
+
+# origin: Thomas Kerpe
 
 
 RUN apt-get update && apt-get install -y wget
