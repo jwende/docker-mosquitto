@@ -15,7 +15,7 @@ RUN apt-get install wget build-essential libwrap0-dev libssl-dev python-distutil
 #WORKDIR /usr/local/src/mosquitto-1.4.5
 #RUN make
 #RUN make install
-
+RUN apt-get install python-software-properties -y
 RUN apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
 RUN apt-get update
 
