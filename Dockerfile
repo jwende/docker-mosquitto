@@ -27,4 +27,4 @@ COPY config /mqtt/config
 
 
 EXPOSE 1883 9001
-CMD [ "/usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf"]
+CMD /usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf"
