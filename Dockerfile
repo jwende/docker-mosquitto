@@ -19,12 +19,12 @@ RUN make install
 RUN adduser --system --disabled-password --disabled-login mosquitto
 
 COPY config /mqtt/config
-RUN mkdir /mqtt/data 
+# RUN mkdir /mqtt/data 
 # && chown mosquitto:mosquitto /mqtt/data
-RUN mkdir /mqtt/log 
-#&& chown mosquitto:mosquitto /mqtt/log
+# RUN mkdir /mqtt/log 
+# && chown mosquitto:mosquitto /mqtt/log
 # VOLUME ["/mqtt/config", "/mqtt/data", "/mqtt/log"]
 
 
 EXPOSE 1883 9001
-CMD ["/usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf"]
+CMD [ "/usr/sbin/mosquitto -c /mqtt/config/mosquitto.conf"]
