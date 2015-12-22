@@ -10,8 +10,7 @@ RUN apt-get upgrade -y
 RUN apt-get install wget build-essential libwrap0-dev libssl-dev python-distutils-extra libc-ares-dev uuid-dev -y
 RUN mkdir -p /usr/local/src
 WORKDIR /usr/local/src
-
-#WebSockets https://goochgooch.wordpress.com/2014/08/01/building-mosquitto-1-4/
+#WebSockets
 RUN apt-get install cmake -y
 RUN wget http://git.warmcat.com/cgi-bin/cgit/libwebsockets/snapshot/libwebsockets-1.5-chrome47-firefox41.tar.gz  
 RUN tar -xzvf libwebsockets-1.5-chrome47-firefox41.tar.gz  
@@ -34,8 +33,11 @@ WORKDIR /usr/local/src/mosquitto-1.4.5
 COPY make/config.mk /usr/local/src/mosquitto-1.4.5/config.mk
 RUN make
 RUN make install
-
-# config
+#RUN apt-get install python-software-properties -y
+#RUN apt-get install software-properties-common -y
+#RUN apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+#RUN apt-get update
+#RUN apt-get install mosquitto -y
 WORKDIR /home
 RUN adduser --system --disabled-password --disabled-login mosquitto 
 RUN mkdir /mqtt
